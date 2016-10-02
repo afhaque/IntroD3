@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph Breaker</title>
+
+	<!-- CSS Styling -->
+	<link rel="stylesheet" href="style.css"></style>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Include D3.js CDN -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<!-- Lodash for Object to Array -->
+	<script src="https://cdn.jsdelivr.net/lodash/4.16.1/lodash.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+			
+		<div class="jumbotron">
+			<h1 class="text-center"><strong>Paragraph Breaker!</strong></h1>
+			<h2 class="text-center">Enter a paragraph of text... we'll calculate the letters!</h2>
+		</div>
+
+		<div class="row">
+			
+			<div class="col-lg-12">
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Enter Your Paragraph Here</h3>
+					</div>
+					<div class="panel-body">
+						<textarea class="form-control" id="paragraphText" rows="10"></textarea>
+						<br>
+						<button type="button" class="btn btn-default" id="analyzeBtn">Analyze Paragraph!</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-lg-12">
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Letter Analysis</h3>
+					</div>
+					<div class="panel-body">
+						<div id="analyzePanel">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Main Script -->
+	<script src="script.js"></script>
+
+</body>
+</html>

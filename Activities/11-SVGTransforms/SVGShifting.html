@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Includes refernce to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+<!-- Create a basic SVG placeholder -->
+<svg width="1000" height="1000">
+
+	<!-- Basic Square -->
+	<rect x="500" y="500" width="200" height="200" fill="blue" stroke="black" stroke-width="10"/>
+
+	<!-- Here we rotate the same square (rotated). Note how it appears in a weird place... (We provided it the angle of rotation, the x-offset and the y-offset) -->
+	<rect x="500" y="500" width="200" height="200" fill="yellow" stroke="black" stroke-width="10" transform="rotate(45, 250, 250)"/>
+
+	<!-- We can fix that by shifting with translate. We can also set the transparency with opacity-->
+	<rect x="500" y="500" width="200" height="200" fill="green" opacity="0.5" stroke="black" stroke-width="10" transform="translate(350, -150) rotate(45, 250, 250)"/>
+
+	<!-- We can grow it by using scaling  -->
+	<rect x="500" y="500" width="200" height="200" fill="orange" stroke="black" stroke-width="10" transform="translate(350, -150) rotate(45, 250, 250) scale(0.5)"/>
+
+	<!-- Note SVG transformations can be a bit tricky because of the coordinate system. Keep experimenting! -->
+</svg>
+
+<script>
+
+</script>
+	
+</body>
+</html>

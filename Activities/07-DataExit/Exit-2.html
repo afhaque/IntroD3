@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Includes reference to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+
+<button id="changeBtn">Change Data!</button>
+
+<script>
+
+function render(dataToRender){
+
+	var selector = d3.select('body')
+		.selectAll('div')
+		.data(dataToRender);
+
+	// Data "Enter"
+	var entering = selector.enter();
+
+	entering.append('div')
+		.text(function(d) { return d; });
+
+	// Data "Update"
+	selector.text(function(d) { return d; });
+
+	// Data "Exiting"
+	var exiting = selector.exit();
+
+	exiting.remove(); // Any extra elements are removed
+
+
+}
+
+$("#changeBtn").on("click", function(){
+
+	var rowWidths = [];
+	for (var i=0; i<3; i++) { // This time the loop only generates 3 random numbers...
+	    rowWidths.push(Math.round(Math.random() * 100))
+	}
+
+	render(rowWidths);
+
+})
+
+render([10, 20, 30, 40, 50]) // But the code starts with 5 random numbers...
+
+// Adding in the exit.remove() code made it such that the unchanged numbers were removed.
+
+</script>
+	
+</body>
+</html>
+

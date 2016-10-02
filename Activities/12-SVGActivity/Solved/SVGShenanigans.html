@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>SVG Shenanigans</title>
+
+	<!-- Includes refernce to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+<!-- Create a basic SVG placeholder -->
+<svg width="1000" height="1000">
+
+	<!-- Create a simple smiley face using SVG -->
+	<circle r="300" cx="500" cy="400" fill="yellow" stroke="green" stroke-width="2px"/>
+	<circle r="50" cx="400" cy="300" fill="white" stroke="green" stroke-width="1px"/>
+	<circle r="50" cx="600" cy="300" fill="white" stroke="green" stroke-width="1px"/>
+	<circle r="10" cx="400" cy="300" fill="black" stroke="green" stroke-width="1px"/>
+	<circle r="10" cx="600" cy="300" fill="black" stroke="green" stroke-width="1px"/>
+    <path d = "M 300 200 a 100 50 0 1 1 250 50" transform="translate(420, 220) rotate(170, 250, 250)"/>
+
+</svg>
+
+<script>
+
+</script>
+	
+</body>
+</html>

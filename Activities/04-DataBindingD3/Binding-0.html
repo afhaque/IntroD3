@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Includes reference to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+	<!-- Panel #1 -->
+	<div id="panel1">
+		<div id="div1">A</div>
+		<div id="div2">B</div>
+		<div id="div3">C</div>
+		<div id="div4">D</div>
+	</div>
+
+
+<script>
+
+// Here we select each of the divs inside the body and then assign them to a data value.
+var selector = d3.select('#panel1')
+	.selectAll('div')
+	.data([10, 20, 30, 40]);
+
+</script>
+	
+</body>
+</html>

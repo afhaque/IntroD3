@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Includes reference to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+	<!-- Panel #1 -->
+	<div id="panel1"></div>
+
+<script>
+
+// This time we reference a set of divs that don't yet exist.
+// But we have data ready to be associated.
+var selector = d3.select('#panel1')
+	.selectAll('div')
+	.data([10, 20, 30, 40, 50]);
+
+// In order for our data to be shown on screen we make use of the D3.js enter() method. 
+// This method will capture any data elements that were left unmattched with divs.
+// We then store these unmatched data elements into a selector. 
+var entering = selector.enter();
+
+// We then use the selector to append h1 elements for each of the data elements. 
+entering.append('div')
+	.text(function(d) { return d; });
+
+// In D3 -- data which needs new visuals created are in a state referred to as "entering". After calling .data() we call the enter() method on the same selector. This method identifies the items in the selector that are entering and hence visuals need to be created. 
+
+</script>
+	
+</body>
+</html>

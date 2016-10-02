@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World - D3.js</title>
+
+	<!-- Added Reference to D3 CDN -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+	
+	<!-- Created a placeholder div "hello" -->
+	<div id="hello"></div>
+
+	<script type="text/javascript">
+	
+		// D3 selects the "hello" div
+		d3.select("#hello")
+
+			// We then append an h1 object into that selected div
+			.append("h1")
+
+			// We then set the text of the the h1 object to be "Hello World..."
+			.text("Hello World! I'm D3.jS");
+
+			// In essence, the syntax is similar, but here we rely on chaining more heavily. 
+			// D3 continually passes the object from the previous method to the subsequent method.
+			// Note: We can't just drop the html inside the append. 
+			
+	</script>
+</body>
+</html>

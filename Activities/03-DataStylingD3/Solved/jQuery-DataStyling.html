@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<title>jQuery Data Styling</title>
+
+	<!-- Includes refernce to D3 -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	
+	<!-- Panel #1 -->
+	<div id="panel1">
+		<div id="div1">A</div>
+		<div id="div2">B</div>
+		<div id="div3">C</div>
+		<div id="div4">D</div>
+		<div id="div5">E</div>
+		<div id="div6">F</div>
+		<div id="div7">G</div>
+		<div id="div8">H</div>
+		<div id="div9">I</div>
+		<div id="div10">J</div>
+		<div id="div11">K</div>
+		<div id="div12">L</div>
+		<div id="div13">M</div>
+		<div id="div14">N</div>
+		<div id="div15">O</div>
+		<div id="div16">P</div>
+		<div id="div17">Q</div>
+		<div id="div18">R</div>
+		<div id="div19">S</div>
+		<div id="div20">T</div>
+		<div id="div21">U</div>
+		<div id="div22">V</div>
+		<div id="div23">W</div>
+		<div id="div24">X</div>
+		<div id="div25">Y</div>
+		<div id="div26">Z</div>
+	</div>
+
+<script>
+
+	// Random Array of 26 Numbers. To be used as row widths. 
+	var rowWidths = [];
+	for (var i=0, t=26; i<t; i++) {
+	    rowWidths.push(Math.round(Math.random() * 180))
+	}
+
+	console.log(rowWidths);
+
+	// Set the background color of each div to be light-blue. 
+	// Then use the rowWidth array to determine each div's pixel width. The elements in the array are ordered to correlate with the div order. (e.g. div1 should have a width of 14px, div2 should have a width of 19px, etc.)
+
+	// var letterDivs = $("#panel1>div").toArray();
+	// for (var i=0; i<letterDivs.length; i++){
+		
+	// 	$(letterDivs[i]).css("background-color", "lightblue");
+	// 	$(letterDivs[i]).css("width", rowWidths[i]);
+	// 	$(letterDivs[i]).css("border-color", "gray");
+	// 	$(letterDivs[i]).css("border-width", "1px");
+	// 	$(letterDivs[i]).css("border-style", "solid");
+	// }
+
+	// Bonus: Re-make the code such that the colors alternate betwen light blue and light pink for each letter's box.
+	var letterDivs = $("#panel1>div").toArray();
+	for (var i=0; i<letterDivs.length; i++){
+		
+		if(i % 2 == 0) {
+			$(letterDivs[i]).css("background-color", "lightblue");
+		}
+		else {
+			$(letterDivs[i]).css("background-color", "lightpink");
+		}
+		$(letterDivs[i]).css("width", rowWidths[i]);
+		$(letterDivs[i]).css("border-color", "gray");
+		$(letterDivs[i]).css("border-width", "1px");
+		$(letterDivs[i]).css("border-style", "solid");
+	}
+
+</script>
+	
+</body>
+</html>

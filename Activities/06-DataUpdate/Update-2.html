@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Includes reference to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+
+<!-- This button will be used to refresh the data -->
+<button id="changeBtn">Change Data!</button>
+
+<script>
+
+// Upon button click we will generate a random array of 5 numbers. 
+$("#changeBtn").on("click", function(){
+
+	var dataArray = [];
+	for (var i=0; i<5; i++) {
+	    dataArray.push(Math.round(Math.random() * 100))
+	}
+
+	render(dataArray);
+
+})
+
+// This function will then take the number array and display them on the screen using D3.js
+function render(dataToRender){
+
+	var selector = d3.select('body')
+		.selectAll('div')
+		.data(dataToRender);
+
+	// D3.js "ENTER" is responsible for loading the data the first time. 
+	var entering = selector.enter();
+
+	entering.append('div')
+		.text(function(d) { return d; });
+
+	// D3.js update is responsible for making subsequent changes. (i.e. if no new data then nothing is "entering")
+	selector.text(function(d) { return d; }); // <------ This fixes the code
+}
+
+
+
+</script>
+	
+</body>
+</html>

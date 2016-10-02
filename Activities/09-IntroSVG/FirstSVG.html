@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Need this utf-8 since D3.js is UTF-8 encoded. -->
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Includes refernce to D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+<!-- First, we add an SVG element (placeholder) -->
+<svg width="720" height="120">
+	
+	<!-- Then we create a series of circles. -->
+	<!-- Note that these elements start from the top left. -->
+	<!-- The value of x increases towards the right. While those of y increase towards the bottom. (NOT THE USUAL COORDINATE SYSTEM) -->
+	<!-- Note how we add styles as well with fill -->
+	<circle cx="40" cy="20" r="10" style="fill:red"/>
+	<circle cx="80" cy="40" r="15" style="fill:green"/>
+	<circle cx="120" cy="60" r="20" style="fill:yellow"/>
+
+</svg>
+
+<script>
+
+</script>
+	
+</body>
+</html>
